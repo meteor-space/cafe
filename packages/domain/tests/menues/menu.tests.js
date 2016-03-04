@@ -5,7 +5,8 @@ describe('Cafe.Menu', function() {
     this.menuId = new Guid();
 
     this.menuItemData = {
-      description: 'My menu item',
+      title: 'Menu item title',
+      description: 'My menu item description',
       price: new Money(10),
       category: new Cafe.MenuItemCategory('SOUP')
     };

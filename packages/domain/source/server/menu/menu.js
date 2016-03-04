@@ -39,6 +39,7 @@ Space.eventSourcing.Aggregate.extend('Cafe.Menu', {
   _onItemAddedToMenu(event) {
     const item = new Cafe.MenuItem({
       id: new Guid(),
+      title: event.title,
       description: event.description,
       price: event.price,
       category: event.category
