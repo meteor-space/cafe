@@ -48,7 +48,7 @@ Space.eventSourcing.Aggregate.extend('Cafe.Tab', {
 
     if (foodItems.length > 0) {
       this.record(new Cafe.FoodOrdered({
-        sourceId: this.this.getId(),
+        sourceId: this.getId(),
         items: foodItems
       }));
     }

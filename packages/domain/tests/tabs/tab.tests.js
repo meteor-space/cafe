@@ -26,6 +26,23 @@ describe('Cafe.Tab', function() {
       ]
     };
 
+    this.foodOrder = {
+      items: [
+        new Cafe.OrderedMenuItem({
+          menuItemId: new Guid(),
+          price: new Money(10),
+          title: 'Soup',
+          category: new Cafe.MenuItemCategory('SOUP')
+        }),
+        new Cafe.OrderedMenuItem({
+          menuItemId: new Guid(),
+          price: new Money(20),
+          title: 'Breakfast',
+          category: new Cafe.MenuItemCategory('BREAKFAST')
+        })
+      ]
+    };
+
   });
 
   describe('opening a new tab', function() {
@@ -66,6 +83,57 @@ describe('Cafe.Tab', function() {
           }))
         ]);
     });
+
+  });
+
+  describe('placing order with only food', function() {
+
+    it('publishes a food ordered event', function() {
+      Cafe.domain.test(Cafe.Tab)
+        .given([
+          new Cafe.TabOpened(_.extend({}, this.newTabData, {
+            sourceId: this.tabId
+          }))
+        ])
+        .when(
+          new Cafe.PlaceOrder(_.extend({}, this.foodOrder, {
+            targetId: this.tabId
+          }))
+        )
+        .expect([
+          new Cafe.FoodOrdered(_.extend({}, this.foodOrder, {
+            sourceId: this.tabId
+          }))
+        ]);
+    });
+
+  });
+
+  describe('placing order with food and drinks', function() {
+
+    it('publishes a drinks ordered and food ordered events', function() {
+      Cafe.domain.test(Cafe.Tab)
+        .given([
+          new Cafe.TabOpened(_.extend({}, this.newTabData, {
+            sourceId: this.tabId
+          }))
+        ])
+        .when(
+          new Cafe.PlaceOrder(_.extend({}, {
+            targetId: this.tabId,
+            items: this.foodOrder.items.concat(this.drinksOrder.items)
+          }))
+        )
+        .expect([
+          new Cafe.FoodOrdered(_.extend({}, this.foodOrder, {
+            sourceId: this.tabId
+          })),
+          new Cafe.DrinksOrdered(_.extend({}, this.drinksOrder, {
+            sourceId: this.tabId
+          }))
+        ]);
+    });
+
   });
 
 });
