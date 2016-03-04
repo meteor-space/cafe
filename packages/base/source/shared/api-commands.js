@@ -5,6 +5,12 @@ Space.messaging.define(Space.domain.Command, 'Cafe', {
     waiterId: Guid
   },
 
-  CreateMenu: {}
+  CreateMenu: {},
+
+  AddItemToMenu: {
+    description: String,
+    price: Money,
+    category: Cafe.MenuItemCategory
+  }
 
 });

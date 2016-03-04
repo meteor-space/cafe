@@ -5,6 +5,7 @@ Space.eventSourcing.Router.extend('Cafe.MenuRouter', {
   initializingMessage: Cafe.CreateMenu,
 
   routeCommands: [
+    Cafe.AddItemToMenu
   ]
 
 });

@@ -9,6 +9,12 @@ Space.messaging.define(Space.domain.Event, 'Cafe', {
 
   // MENUS
 
-  MenuCreated: {}
+  MenuCreated: {},
+
+  ItemAddedToMenu: {
+    description: String,
+    price: Money,
+    category: Cafe.MenuItemCategory
+  }
 
 });

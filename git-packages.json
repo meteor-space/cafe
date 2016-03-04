@@ -1,1 +1,6 @@
-{}
+{
+  "space:testing-event-sourcing": {
+    "git":"https://github.com/meteor-space/testing-event-sourcing.git",
+    "version": "f641186ba7b9ad52cc4d3854ec836bed7d6032d7"
+  }
+}
