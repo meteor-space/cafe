@@ -19,7 +19,11 @@ Package.onUse(function(api) {
 
   // SHARED
   api.addFiles([
+    // NAMESPACE
     'source/shared/namespace.js',
+    // VALUE OBJECTS
+    'source/shared/value-objects/menu-item-category.js',
+    // DOMAIN COMMANDS
     'source/shared/api-commands.js'
   ]);
 
@@ -30,5 +34,23 @@ Package.onUse(function(api) {
   ], 'server');
 
   api.export('Cafe');
+
+});
+
+
+Package.onTest(function(api) {
+
+  api.use([
+    'ecmascript',
+    'check',
+    'ejson',
+    'practicalmeteor:munit@2.1.5',
+    'space:testing@3.0.1',
+    'cafe:base'
+  ]);
+
+  api.addFiles([
+    'tests/value-objects/menu-item-category.unit.js'
+  ]);
 
 });
