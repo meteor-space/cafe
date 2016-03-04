@@ -7,6 +7,14 @@ Space.messaging.define(Space.domain.Event, 'Cafe', {
     waiterId: Guid
   },
 
+  DrinksOrdered: {
+    items: [Cafe.OrderedMenuItem]
+  },
+
+  FoodOrdered: {
+    items: [Cafe.OrderedMenuItem]
+  },
+
   // MENUS
 
   MenuCreated: {},

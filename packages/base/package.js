@@ -23,6 +23,7 @@ Package.onUse(function(api) {
     // NAMESPACE
     'source/shared/namespace.js',
     // VALUE OBJECTS
+    'source/shared/value-objects/ordered-menu-item.js',
     'source/shared/value-objects/menu-item-category.js',
     // DOMAIN COMMANDS
     'source/shared/api-commands.js'

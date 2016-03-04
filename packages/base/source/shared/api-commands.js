@@ -7,6 +7,10 @@ Space.messaging.define(Space.domain.Command, 'Cafe', {
     waiterId: Guid
   },
 
+  PlaceOrder: {
+    items: [Cafe.OrderedMenuItem]
+  },
+
   // MENUS
 
   CreateMenu: {},
