@@ -23,7 +23,10 @@ Package.onUse(function(api) {
     'source/server/module.js',
     // TABS
     'source/server/tabs/tab.js',
-    'source/server/tabs/tab-router.js'
+    'source/server/tabs/tab-router.js',
+    // MENUS
+    'source/server/menu/menu.js',
+    'source/server/menu/menu-router.js'
   ], 'server');
 
 });
@@ -45,7 +48,8 @@ Package.onTest(function(api) {
   ]);
 
   api.addFiles([
-    'tests/tabs/tab.tests.js'
+    'tests/tabs/tab.tests.js',
+    'tests/menues/menu.tests.js'
   ], 'server');
 
 });
