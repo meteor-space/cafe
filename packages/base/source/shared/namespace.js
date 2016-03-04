@@ -1,0 +1,1 @@
+Cafe = Space.namespace('Cafe');
