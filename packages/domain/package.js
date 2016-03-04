@@ -20,7 +20,10 @@ Package.onUse(function(api) {
   ]);
 
   api.addFiles([
-    'source/server/module.js'
+    'source/server/module.js',
+    // TABS
+    'source/server/tabs/tab.js',
+    'source/server/tabs/tab-router.js'
   ], 'server');
 
 });
@@ -42,6 +45,7 @@ Package.onTest(function(api) {
   ]);
 
   api.addFiles([
+    'tests/tabs/tab.tests.js'
   ], 'server');
 
 });
