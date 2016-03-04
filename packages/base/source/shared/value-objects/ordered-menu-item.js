@@ -4,7 +4,8 @@ Cafe.MenuItemCategory = Space.domain.ValueObject.extend('Cafe.OrderedMenuItem', 
     return {
       menuItemId: Guid,
       price: Money,
-      title: String
+      title: String,
+      category: Cafe.MenuItemCategory
     };
   }
 

@@ -5,6 +5,7 @@ Space.eventSourcing.Router.extend('Cafe.TabRouter', {
   initializingMessage: Cafe.OpenTab,
 
   routeCommands: [
+    Cafe.PlaceOrder
   ]
 
 });
