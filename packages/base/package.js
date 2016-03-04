@@ -14,7 +14,8 @@ Package.onUse(function(api) {
     'check',
     'ecmascript',
     'space:messaging@3.1.1',
-    'space:domain@0.2.1'
+    'space:domain@0.2.1',
+    'space:vo-monetary@0.2.0'
   ]);
 
   // SHARED
@@ -29,7 +30,11 @@ Package.onUse(function(api) {
 
   // SERVER ONLY
   api.addFiles([
+    // ENTITIES
+    'source/server/entities/menu-item.js',
+    // DOMAIN ERRORS
     'source/server/errors.js',
+    // DOMAIN EVENTS
     'source/server/events.js'
   ], 'server');
 
